@@ -18,10 +18,9 @@ const AddNewCaseForm = () => {
       navigate(`/case/new-case/${pageNumber - 1}`);
     }
   };
-  useEffect(()=>{
-    if(pageNumber)
-        setFormCompletePer((pageNumber/8)*100)
-  },[pageNumber]);
+  useEffect(() => {
+    if (pageNumber) setFormCompletePer((pageNumber / 8) * 100);
+  }, [pageNumber]);
   useEffect(() => {
     if (id === undefined) {
       setPageNumber(1);
@@ -31,7 +30,16 @@ const AddNewCaseForm = () => {
   }, [id]);
   return (
     <>
-      <div className="progress" style={{margin:'5px 0px',height:'2px', position:'sticky',top:0,zIndex:'200'}}>
+      <div
+        className="progress"
+        style={{
+          margin: "5px 0px",
+          height: "2px",
+          position: "sticky",
+          top: 0,
+          zIndex: "200",
+        }}
+      >
         <div
           className="progress-bar"
           role="progressbar"
@@ -43,7 +51,7 @@ const AddNewCaseForm = () => {
       </div>
       {(Number(pageNumber) === 1 || pageNumber === undefined) && (
         <div>
-          <h3>Child Information {id}</h3>
+          <h3>Child Information</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -187,14 +195,6 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -225,7 +225,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 2 && (
         <div>
-          <h3>Case Details {id}</h3>
+          <h3>Case Details</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -332,14 +332,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -370,7 +363,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 3 && (
         <div>
-          <h3>Legal Representation {id}</h3>
+          <h3>Legal Representation</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -420,14 +413,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -458,7 +444,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 4 && (
         <div>
-          <h3>Child Protection Measures {id}</h3>
+          <h3>Child Protection Measures</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -495,14 +481,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -533,7 +512,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 5 && (
         <div>
-          <h3>Evidence and Documentation {id}</h3>
+          <h3>Evidence and Documentation</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -605,14 +584,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -643,7 +615,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 6 && (
         <div>
-          <h3>Case Management {id}</h3>
+          <h3>Case Management</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -702,14 +674,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -740,7 +705,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 7 && (
         <div>
-          <h3>Court Orders & Judgements {id}</h3>
+          <h3>Court Orders & Judgements</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -766,14 +731,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
@@ -804,7 +762,7 @@ const AddNewCaseForm = () => {
       )}
       {Number(pageNumber) === 8 && (
         <div>
-          <h3>Monitoring and Follow-up {id}</h3>
+          <h3>Monitoring and Follow-up</h3>
           <div className={"card "} style={{ padding: "10px" }}>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -830,14 +788,7 @@ const AddNewCaseForm = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                height: "1px",
-                background: "red",
-                margin: "5px 0px",
-              }}
-            ></div>
+
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
                 <button
