@@ -29,7 +29,7 @@ const Taluk = () => {
   return (
     <>
       <div>
-        <h3>Taluk</h3>
+        {/* <h3>Taluk</h3> */}
         <div className={"card "} style={{ maxHeight: "80vh", padding: "10px" }}>
           <div
             style={{

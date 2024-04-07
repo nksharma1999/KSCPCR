@@ -29,7 +29,7 @@ const Village = () => {
   return (
     <>
       <div>
-        <h3>Village</h3>
+        {/* <h3>Village</h3> */}
         <div className={"card "} style={{ maxHeight: "80vh", padding: "10px" }}>
           <div
             style={{

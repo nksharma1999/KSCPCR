@@ -37,7 +37,7 @@ const AddNewCaseForm = () => {
           height: "2px",
           position: "sticky",
           top: 0,
-          zIndex: "200",
+          zIndex: "5",
         }}
       >
         <div

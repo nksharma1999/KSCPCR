@@ -30,7 +30,7 @@ const District = () => {
   return (
     <>
       <div>
-        <h3>District</h3>
+        {/* <h3>District</h3> */}
         <div className={"card "} style={{ maxHeight: "80vh", padding: "10px" }}>
           <div
             style={{

@@ -1,8 +1,13 @@
-
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 
 export const Sidebar = () => {
   const baseUrl = window.location.origin;
+  const nav = useNavigate();
+  const handleLogOut = () => {
+    localStorage.removeItem("auth");
+    nav('/');
+    window.location.reload();
+  };
   return (
     <div
       className="sideBarBox"
@@ -10,18 +15,27 @@ export const Sidebar = () => {
         width: "290px",
         height: "100vh",
         // padding: 10,
-        backgroundColor: "#666699",
+        backgroundColor: "white",
         // backgroundImage:
         //   "url(https://reduction-admin.github.io/react-reduction/static/media/sidebar-4.80d4a4e5.jpg)",
         backgroundBlendMode: "overlay",
         overflow: "hidden",
         overflowY: "auto",
-        position:'relative'
+        position: "relative",
       }}
     >
-      <div style={{ padding: 10, position:'sticky',top:0,zIndex:10,background:'#666699',marginLeft:'48px'}}>
+      <div
+        style={{
+          padding: 10,
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
+          background: "white",
+          marginLeft: "48px",
+        }}
+      >
         <img
-          style={{ width: "100px", mixBlendMode: 'color-burn',  }}
+          style={{ width: "100px" }}
           // src="https://kscpcr.karnataka.gov.in/uploads/dept_photo1696326687.jpg"
           src={baseUrl + "/logo3.jpeg"}
           alt="Logo"
@@ -47,7 +61,7 @@ export const Sidebar = () => {
                 aria-controls="adminHeader-Collapse"
                 style={{
                   backgroundColor: "transparent",
-                  color: "white",
+                  color: "black",
                   paddingLeft: "10px",
                 }}
               >
@@ -68,7 +82,10 @@ export const Sidebar = () => {
                 className="accordion-body"
                 style={{ padding: "0px", background: "darkcyan" }}
               >
-                <NavLink className="nav-link sidebarNavLink" to={"case/new-case"}>
+                <NavLink
+                  className="nav-link sidebarNavLink"
+                  to={"case/new-case"}
+                >
                   {/* <i className="fa-solid fa-user-plus sidebarIcon"></i> */}
                   Add New Case
                 </NavLink>
@@ -82,7 +99,6 @@ export const Sidebar = () => {
                   {/* <i className="fa-solid fa-user-shield sidebarIcon"></i> */}
                   Case Tracker
                 </NavLink>
-               
               </div>
             </div>
           </div>
@@ -106,7 +122,7 @@ export const Sidebar = () => {
                 aria-controls="masterData-collapse"
                 style={{
                   backgroundColor: "transparent",
-                  color: "white",
+                  color: "black",
                   paddingLeft: "10px",
                 }}
               >
@@ -129,44 +145,60 @@ export const Sidebar = () => {
               >
                 <NavLink
                   className="nav-link sidebarNavLink"
+                  to={"master-data/index"}
+                >
+                  Address
+                </NavLink>
+                {/* <NavLink
+                  className="nav-link sidebarNavLink"
                   to={"master-data/State"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   State
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/District"}
                 >
-                  {/* <i className="fa-solid fa-building-columns sidebarIcon"></i> */}
+                  
                   District
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/City"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   City
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/Taluk"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   Taluk
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/Village"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   Village
-                </NavLink>
+                </NavLink> */}
               </div>
             </div>
           </div>
         </div>
-       
+        <div>
+          <button
+            onClick={handleLogOut}
+            className="btn"
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+            <span style={{ marginLeft: "10px" }}>Log Out</span>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,14 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export const OffCanvas = () => {
   const baseUrl = window.location.origin;
+  const nav = useNavigate();
+  const handleLogOut = () => {
+    localStorage.removeItem("auth");
+    nav('/');
+    window.location.reload();
+  };
   return (
     <div
       style={{
         width: "250px",
         height: "100vh",
         // padding: 10,
-        backgroundColor: "#666699",
+        backgroundColor: "white",
         backgroundBlendMode: "overlay",
         overflow: "hidden",
         overflowY: "auto",
@@ -22,9 +28,9 @@ export const OffCanvas = () => {
     >
       <div className="offcanvas-header">
         <img
-          style={{ width: "100px", mixBlendMode: "color-burn",marginLeft:'45px' }}
+          style={{ width: "100px",marginLeft:'45px' }}
           // src="http://simpro.co.in/wp-content/uploads/2022/06/simpro-logo1-1.png"
-          src={baseUrl + "/logo2.jpeg"}
+          src={baseUrl + "/logo3.jpeg"}
           alt="Logo"
         />
         {/* <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> */}
@@ -50,7 +56,7 @@ export const OffCanvas = () => {
                 aria-controls="adminHeader-Collapse"
                 style={{
                   backgroundColor: "transparent",
-                  color: "white",
+                  color: "black",
                   paddingLeft: "10px",
                 }}
               >
@@ -71,7 +77,10 @@ export const OffCanvas = () => {
                 className="accordion-body"
                 style={{ padding: "0px", background: "darkcyan" }}
               >
-                <NavLink className="nav-link sidebarNavLink" to={"case/new-case"}>
+                <NavLink
+                  className="nav-link sidebarNavLink"
+                  to={"case/new-case"}
+                >
                   {/* <i className="fa-solid fa-user-plus sidebarIcon"></i> */}
                   Add New Case
                 </NavLink>
@@ -85,7 +94,6 @@ export const OffCanvas = () => {
                   {/* <i className="fa-solid fa-user-shield sidebarIcon"></i> */}
                   Case Tracker
                 </NavLink>
-               
               </div>
             </div>
           </div>
@@ -109,7 +117,7 @@ export const OffCanvas = () => {
                 aria-controls="masterData-collapse"
                 style={{
                   backgroundColor: "transparent",
-                  color: "white",
+                  color: "black",
                   paddingLeft: "10px",
                 }}
               >
@@ -132,44 +140,60 @@ export const OffCanvas = () => {
               >
                 <NavLink
                   className="nav-link sidebarNavLink"
+                  to={"master-data/index"}
+                >
+                  Address
+                </NavLink>
+                {/* <NavLink
+                  className="nav-link sidebarNavLink"
                   to={"master-data/State"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   State
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/District"}
                 >
-                  {/* <i className="fa-solid fa-building-columns sidebarIcon"></i> */}
+                  
                   District
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/City"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   City
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/Taluk"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   Taluk
                 </NavLink>
                 <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/Village"}
                 >
-                  {/* <i className="fa-regular fa-calendar-days sidebarIcon"></i> */}
                   Village
-                </NavLink>
+                </NavLink> */}
               </div>
             </div>
           </div>
         </div>
-       
+        <div>
+          <button
+            onClick={handleLogOut}
+            className="btn"
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+            <span style={{ marginLeft: "10px" }}>Log Out</span>
+          </button>
+        </div>
       </div>
       </div>
     </div>

@@ -29,10 +29,7 @@ export const Header: React.FC<props> = ({ updateSideBarView, widthLow }) => {
     setShowSearchPage(e);
   };
   return (
-    <nav
-      className="navbar navbar-light"
-      style={{ backgroundColor: "#666699" }}
-    >
+    <nav className="navbar navbar-light" style={{ backgroundColor: "white",position:'sticky', top:0,zIndex:'10' }}>
       <div className="container-fluid">
         <div>
           {!widthLow ? (
@@ -46,7 +43,7 @@ export const Header: React.FC<props> = ({ updateSideBarView, widthLow }) => {
                 borderColor: "#da1818",
               }}
             >
-              <i className="fa-solid fa-bars" style={{ color: "white" }}></i>
+              <i className="fa-solid fa-bars"></i>
             </button>
           ) : (
             <button
@@ -60,6 +57,10 @@ export const Header: React.FC<props> = ({ updateSideBarView, widthLow }) => {
               <i className="fa-solid fa-bars"></i>
             </button>
           )}
+        </div>
+        <div>
+          <h6>ಕರ್ನಾಟಕ ರಾಜ್ಯ ಮಕ್ಕಳ ಹಕ್ಕುಗಳ ರಕ್ಷಣಾ ಆಯೋಗ </h6>
+          <p style={{marginTop:'-10px',fontSize:'12px'}}>ಕರ್ನಾಟಕ ಸರ್ಕಾರ</p>
         </div>
         <OffCanvas />
         <form className="d-flex">

@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const CaseTracker = () => {
+  const navigate = useNavigate();
+  const openCaseDetails = (id: any) => {
+    navigate(`/case/case-tracker/${id}`);
+  };
   return (
     <div>
       <h3>Dashboard</h3>
@@ -11,8 +17,15 @@ const CaseTracker = () => {
             aria-label="Search"
           />
         </div>
-        <div style={{height:'1px',width:'100%',margin:'5px 0px', background:'gray'}}></div>
-        <div style={{width:'100%', overflow:'auto'}}>
+        <div
+          style={{
+            height: "1px",
+            width: "100%",
+            margin: "5px 0px",
+            background: "gray",
+          }}
+        ></div>
+        <div style={{ width: "100%", overflow: "auto" }}>
           <table className="table table-striped table-hover table-bordered">
             <thead style={{ background: "#6c5ea5", color: "white" }}>
               <tr>
@@ -25,68 +38,69 @@ const CaseTracker = () => {
                 <th scope="col">Case Status</th>
                 <th scope="col">Next Hearing Date</th>
                 <th scope="col">Case Status</th>
-                <th scope="col">Action</th>
+                {/* <th scope="col">Action</th> */}
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+              <tr onClick={() => openCaseDetails(123445)}>
+                <th scope="row">ABCD</th>
+                <td>M</td>
                 <td>Otto</td>
-                <td>@mdo</td>
+                <td>123434</td>
                 <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>
-                  <button className="btn">
-                    <i className="fa-solid fa-pen-to-square"></i>
-                  </button>
-                  <button className="btn">
+                <td>Child Labour</td>
+                <td>Open</td>
+                <td>12-04-2024</td>
+                <td>Progress</td>
+
+                {/* <td>
+                  <button
+                    className="btn"
+                    onClick={() => openCaseDetails(123434)}
+                  >
                     <i className="fa-solid fa-info"></i>
                   </button>
-                </td>
+                </td> */}
               </tr>
 
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+              <tr onClick={() => openCaseDetails(123445)}>
+                <th scope="row">ABCDD</th>
+                <td>F</td>
                 <td>Otto</td>
-                <td>@mdo</td>
+                <td>123445</td>
                 <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>
-                  <button className="btn">
-                    <i className="fa-solid fa-pen-to-square"></i>
-                  </button>
-                  <button className="btn">
+                <td>Child Labour</td>
+                <td>Open</td>
+                <td>12-04-2024</td>
+                <td>Progress</td>
+                {/* <td>
+                  <button
+                    className="btn"
+                    onClick={() => openCaseDetails(123445)}
+                  >
                     <i className="fa-solid fa-info"></i>
                   </button>
-                </td>
+                </td> */}
               </tr>
 
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+              <tr onClick={() => openCaseDetails(123435)}>
+                <th scope="row">ABCDD</th>
+                <td>M</td>
                 <td>Otto</td>
-                <td>@mdo</td>
+                <td>123435</td>
                 <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>
-                  <button className="btn">
-                    <i className="fa-solid fa-pen-to-square"></i>
-                  </button>
-                  <button className="btn">
+                <td>Child Labour</td>
+                <td>Open</td>
+                <td>12-04-2024</td>
+                <td>Progress</td>
+                {/* <td>
+                  <button
+                    className="btn"
+                    onClick={() => openCaseDetails(123435)}
+                  >
                     <i className="fa-solid fa-info"></i>
                   </button>
-                </td>
+                </td> */}
               </tr>
             </tbody>
           </table>
