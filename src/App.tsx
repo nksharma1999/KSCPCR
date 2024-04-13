@@ -7,6 +7,7 @@ import CaseTracker from "./components/Case/CaseTracker";
 import CaseDetails from "./components/Case/CaseDetails";
 import { Login } from "./components/Login/Login";
 import { Index } from "./components/MasterData/Index";
+import { CourtInfo } from "./components/MasterData/CourtInfo";
 const DashBoard = lazy(() => import("./components/DashBoard"));
 const State = lazy(() => import("./components/MasterData/State"));
 const District = lazy(() => import("./components/MasterData/District"));
@@ -48,6 +49,7 @@ function App() {
                 <Route path="State" element={<State />} />
                 <Route path="Taluk" element={<Taluk />} />
                 <Route path="City" element={<City />} />
+                <Route path="court" element={<CourtInfo />} />
               </Route>
               <Route path="/case" element={<Outlet />}>
                 <Route path="case-tracker/" element={<CaseTracker />} />

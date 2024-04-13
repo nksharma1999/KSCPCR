@@ -92,6 +92,7 @@ const Village = () => {
                       >
                         <button
                           onClick={() => handleEdit(val)}
+                          className="btn"
                           style={{
                             backgroundColor: "white",
                             border: "none",
@@ -101,6 +102,7 @@ const Village = () => {
                           <i className="fa-solid fa-pen-to-square"></i>
                         </button>
                         <button
+                        className="btn"
                           style={{
                             backgroundColor: "white",
                             border: "none",

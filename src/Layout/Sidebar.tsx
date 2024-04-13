@@ -149,6 +149,12 @@ export const Sidebar = () => {
                 >
                   Address
                 </NavLink>
+                <NavLink
+                  className="nav-link sidebarNavLink"
+                  to={"master-data/court"}
+                >
+                  Court Info
+                </NavLink>
                 {/* <NavLink
                   className="nav-link sidebarNavLink"
                   to={"master-data/State"}
